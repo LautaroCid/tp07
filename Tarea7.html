@@ -1,0 +1,54 @@
+<html>
+
+ <head>
+ </head>
+
+ <body>
+  <script>
+	function ran(){
+		return Math.floor(Math.random() * 10);
+	}
+
+	function modas(a){
+		let b=a[0],d=[2],e=[2],c=0;
+		e=[0,0];
+    d=[0,0];
+		for(let i=0;i<a.length;i++){
+      c=b;
+      b=a[i];
+      if(c==b){
+        e[0]=e[0]+1;
+        e[1]=b;
+        //document.write('e0 '+e[0]+'<br>'+'e1 '+e[1]+'<br>');
+      }else{
+        e[0]=1;
+        e[1]=b;
+      }
+      if(e[0]>d[0]){
+        d[0]=e[0];
+        d[1]=e[1];
+        //document.write('d0 '+d[0]+'<br>'+'d1 '+d[1]+'<br>');
+      }
+    }
+		return d;
+	 }
+
+	let a=[];
+	let b;
+
+	b=prompt('ingrese un numero entero ','');
+
+	for(let i=0;i<b;i++){
+		a.push(ran());
+	}
+
+  a.sort();
+  document.write('Vector '+a+'<br>')
+	let v=[];
+  v=modas(a);
+
+	document.write('El numero '+v[1]+' se repite '+v[0]+' veces');
+  </script>
+ </body>
+
+</html>
